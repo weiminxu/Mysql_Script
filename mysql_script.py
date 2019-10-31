@@ -44,7 +44,13 @@ mycursor = mydb.cursor()
 # for x in myresult:
 #     print(x)
 
-sql = "SELECT * FROM customers WHERE address = 'Park Lane 38'"
+# sql = "SELECT * FROM customers WHERE address = 'Park Lane 38'"
+# mycursor.execute(sql)
+# myresult = mycursor.fetchall()
+# for x in myresult:
+#     print(x)
+
+sql = "SELECT * FROM customers ORDER BY name"
 mycursor.execute(sql)
 myresult = mycursor.fetchall()
 for x in myresult:
