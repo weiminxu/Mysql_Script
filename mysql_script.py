@@ -14,4 +14,9 @@ mycursor = mydb.cursor()
 
 #mycursor.execute("CREATE DATABASE mysql_script")
 
-mycursor.execute("CREATE TABLE customers(name VARCHAR(255), address VARCHAR(255))")
+#mycursor.execute("CREATE TABLE customers(name VARCHAR(255), address VARCHAR(255))")
+
+sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
+val = ("John", "Highway 21")
+mycursor.execute(sql, val)
+mydb.commit()
