@@ -14,7 +14,7 @@ mycursor = mydb.cursor()
 
 #mycursor.execute("CREATE DATABASE mysql_script")
 
-#mycursor.execute("CREATE TABLE customers(name VARCHAR(255), address VARCHAR(255))")
+mycursor.execute("CREATE TABLE IF NOT EXISTS customers(name VARCHAR(255), address VARCHAR(255))")
 
 #sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
 #val = ("John", "Highway 21")
@@ -29,13 +29,14 @@ mycursor = mydb.cursor()
 #     ("Sandy", "Ocean blvd 2"),
 #     ("Betty", "Green Grass 1"),
 #     ("Richard", "Sky st 331"),
-#     ("Susan', 'One way 98'),
-#     ('Vicky', 'Yellow Garden 2'),
-#     ('Ben', 'Park Lane 38'),
-#     ('William', 'Central st 954'),
-#     ('Chuck', 'Main Road 989'),
-#     ('Viola', 'Sideway 1633')
+#     ("Susan", "One way 98"),
+#     ("Vicky", "Yellow Garden 2"),
+#     ("Ben", "Park Lane 38"),
+#     ("William", "Central st 954"),
+#     ("Chuck", "Main Road 989"),
+#     ("Viola", "Side way 1633")
 # ]
+# #assert isinstance(mycursor.executemany, object)
 # mycursor.executemany(sql, val)
 # mydb.commit()
 
@@ -63,5 +64,9 @@ mycursor = mydb.cursor()
 # sql = "DROP TABLE customers"
 # mycursor.execute(sql)
 
-sql = "DROP TABLE IF EXISTS customers"
+# sql = "DROP TABLE IF EXISTS customers"
+# mycursor.execute(sql)
+
+sql = "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'"
 mycursor.execute(sql)
+mydb.commit()
