@@ -29,7 +29,7 @@ mycursor = mydb.cursor()
 #     ("Sandy", "Ocean blvd 2"),
 #     ("Betty", "Green Grass 1"),
 #     ("Richard", "Sky st 331"),
-#     ('Susan', 'One way 98'),
+#     ("Susan', 'One way 98'),
 #     ('Vicky', 'Yellow Garden 2'),
 #     ('Ben', 'Park Lane 38'),
 #     ('William', 'Central st 954'),
@@ -56,6 +56,12 @@ mycursor = mydb.cursor()
 # for x in myresult:
 #     print(x)
 
-sql = "DELETE FROM customers WHERE address = 'Mountain 21'"
-mycursor.execute(sql)
-mydb.commit()
+# sql = "DELETE FROM customers WHERE address = 'Mountain 21'"
+# mycursor.execute(sql)
+# mydb.commit()
+
+# sql = "DROP TABLE customers"
+# mycursor.execute(sql)
+
+# sql = "DROP TABLE IF EXISTS customers"
+# mycursor.execute(sql)
