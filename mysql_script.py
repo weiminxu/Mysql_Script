@@ -63,5 +63,5 @@ mycursor = mydb.cursor()
 # sql = "DROP TABLE customers"
 # mycursor.execute(sql)
 
-# sql = "DROP TABLE IF EXISTS customers"
-# mycursor.execute(sql)
+sql = "DROP TABLE IF EXISTS customers"
+mycursor.execute(sql)
