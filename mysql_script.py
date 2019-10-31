@@ -39,9 +39,13 @@ mycursor = mydb.cursor()
 # mycursor.executemany(sql, val)
 # mydb.commit()
 
-mycursor.execute("SELECT * FROM customers")
+# mycursor.execute("SELECT * FROM customers")
+# myresult = mycursor.fetchall()
+# for x in myresult:
+#     print(x)
 
+sql = "SELECT * FROM customers WHERE address = 'Park Lane 38'"
+mycursor.execute(sql)
 myresult = mycursor.fetchall()
-
 for x in myresult:
     print(x)
