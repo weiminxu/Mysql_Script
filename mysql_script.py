@@ -67,6 +67,11 @@ mycursor.execute("CREATE TABLE IF NOT EXISTS customers(name VARCHAR(255), addres
 # sql = "DROP TABLE IF EXISTS customers"
 # mycursor.execute(sql)
 
-sql = "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'"
-mycursor.execute(sql)
+# sql = "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'"
+# mycursor.execute(sql)
+# mydb.commit()
+
+sql = "UPDATE customers SET address = %s WHERE address = %s"
+val = ("Valley 345", "Canyon 123")
+mycursor.execute(sql, val)
 mydb.commit()
